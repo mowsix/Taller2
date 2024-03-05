@@ -1,9 +1,5 @@
 public interface Punto2D {
 
-    /**
-     *
-     * @return La coordenada X del punto
-     */
     double getX();
 
     /**
@@ -17,5 +13,7 @@ public interface Punto2D {
      * @return La distancia euclideana entre 'this' y 'punto'
      */
     double distancia(Punto2D punto);
+
+
 }
 
