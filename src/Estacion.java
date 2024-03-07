@@ -3,10 +3,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Estacion implements Punto2D {
+
+    private int id;
     private double x;
     private double y;
 
-    public Estacion(double x, double y) {
+
+
+    public Estacion(int id, double x, double y) {
+        this.id=id;
         this.x = x;
         this.y = y;
     }
@@ -30,11 +35,11 @@ public class Estacion implements Punto2D {
     public static ArrayList<Estacion> crearEstaciones(int CantidadEstaciones){
         ArrayList<Estacion> Estaciones = new ArrayList<>();
 
-        for (int i = 0; i<=CantidadEstaciones; i++){
+        for (int i = 1; i<=CantidadEstaciones; i++){
             Random random = new Random();
             double coordenadaX = random.nextDouble() * 10.0;
             double coordenadaY = random.nextDouble() * 10.0;
-            Estaciones.add(new Estacion(coordenadaX,coordenadaY));
+            Estaciones.add(new Estacion(i,coordenadaX,coordenadaY));
         }
 
         for (Estacion Estacion:
@@ -45,5 +50,12 @@ public class Estacion implements Punto2D {
 
 
         return Estaciones;
+    }
+
+
+    @Override
+    public String toString() {
+        //return "Persona{id= "+id+ ", tiempo de llegada= "+tiempoLlegada+"}";
+        return String.format("Estacion " +id+ " X = "+x+" Y = "+y+"}\n");
     }
 }

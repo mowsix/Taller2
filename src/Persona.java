@@ -1,11 +1,15 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Persona implements Punto2D {
+
+    private int id;
     private double x;
     private double y;
     private Estacion estacionAsociada;
 
-    public Persona(double x, double y) {
+    public Persona(int id, double x, double y) {
+        this.id= id;
         this.x = x;
         this.y = y;
         this.estacionAsociada = null; // Inicialmente no está asociada a ninguna estación
@@ -34,10 +38,30 @@ public class Persona implements Punto2D {
         return 0;
     }
 
-    public static ArrayList<Estacion> crearPersonas(int CantidadPersonas){
-        ArrayList<Estacion> Personas = new ArrayList<>();
+    public static ArrayList<Persona> crearPersonas(int CantidadPersonas){
+        ArrayList<Persona> Personas = new ArrayList<>();
+
+        for (int i = 1; i<=CantidadPersonas; i++){
+            Random random = new Random();
+            double coordenadaX = random.nextDouble() * 10.0;
+            double coordenadaY = random.nextDouble() * 10.0;
+            Personas.add(new Persona(i,coordenadaX,coordenadaY));
+        }
+
+        for (Persona Persona:
+                Personas) {
+            System.out.println(Persona);
+        }
+
+
 
         return Personas;
+    }
+
+    @Override
+    public String toString() {
+        //return "Persona{id= "+id+ ", tiempo de llegada= "+tiempoLlegada+"}";
+        return String.format("Persona " +id+ " X = "+x+" Y = "+y+"}\n");
     }
 
 
