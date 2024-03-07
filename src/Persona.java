@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Persona implements Punto2D {
     private double x;
     private double y;
@@ -31,4 +33,13 @@ public class Persona implements Punto2D {
     public double distancia(Punto2D punto) {
         return 0;
     }
+
+    public static ArrayList<Estacion> crearPersonas(int CantidadPersonas){
+        ArrayList<Estacion> Personas = new ArrayList<>();
+
+        return Personas;
+    }
+
+
+
 }

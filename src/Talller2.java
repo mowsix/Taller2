@@ -44,6 +44,10 @@ public class Talller2 {
         Scanner personas = new Scanner(System.in);
         System.out.println("Ingrese El numero de Estaciones: ");
         Scanner EstacionesBase = new Scanner(System.in);
+        String input = EstacionesBase.nextLine();
+
+        //stacion.crearEstaciones(Integer.parseInt(String.valueOf(EstacionesBase)));
+        Estacion.crearEstaciones(Integer.parseInt(input));
 
     }
 }
