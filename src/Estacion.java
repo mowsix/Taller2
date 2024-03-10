@@ -1,12 +1,16 @@
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Estacion implements Punto2D {
 
     private int id;
     private double x;
     private double y;
+
+
+    public int getId() {
+        return id;
+    }
 
 
 
