@@ -2,25 +2,31 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Talller2 {
-
+    public static int tiempoDeEjecucion=0;
 
     public static void asignarEstaciones(int estaciones , int personas){
+        Talller2.tiempoDeEjecucion=0;
+        double distanciaMinima= 100.0;
+        int contadorAccesos =0;
+
         ArrayList<Estacion> listaEstaciones= Estacion.crearEstaciones(estaciones);
         ArrayList<Persona>listaPersonas= Persona.crearPersonas(personas);
 
-        double distanciaMinima= 100.0;
         for (Persona estaPersona:
              listaPersonas) {
             for (Estacion estaEstacion:
                  listaEstaciones) {
+                contadorAccesos++;
                 double distancia= Math.sqrt((Math.pow((estaPersona.getX()-estaEstacion.getX()),2))+(Math.pow((estaPersona.getY()-estaEstacion.getY()),2)));
                 if (distancia<distanciaMinima){
                     distanciaMinima=distancia;
                     estaPersona.setEstacionAsociada(estaEstacion.getId());
+
                 }
             }
             distanciaMinima=100.0;
         }
+
 
 
         System.out.println("PERSONAS CON ESTACIONESSSSSSSS");
@@ -28,25 +34,25 @@ public class Talller2 {
                 listaPersonas) {
             System.out.println(Persona);
         }
+
+        tiempoDeEjecucion=contadorAccesos;
+
     }
 
-    public void medirTiempo(){
+
+
+    public void medirTiempo(int numeroEstaciones, int numeroPersonas, int k){
+        int promedioTiempo, mediciones=0;
+        for (int i=0; i<=k; i++){
+            asignarEstaciones(numeroEstaciones, numeroPersonas);
+            mediciones+=tiempoDeEjecucion;
+        }
+        promedioTiempo=(mediciones/k);
+        System.out.println("Con "+numeroEstaciones+" Estaciones y "+numeroPersonas+" El promedio de tiempo fue: "+promedioTiempo  );
+
+
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -80,8 +86,6 @@ public class Talller2 {
         //Persona.crearPersonas(Integer.parseInt(input2));
 
         asignarEstaciones(numeroEstaciones,numeropersonas);
-
-
 
 
     }
