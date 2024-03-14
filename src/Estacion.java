@@ -46,10 +46,13 @@ public class Estacion implements Punto2D {
             Estaciones.add(new Estacion(i,coordenadaX,coordenadaY));
         }
 
+        /*
         for (Estacion Estacion:
              Estaciones) {
             System.out.println(Estacion);
         }
+        */
+
 
 
 

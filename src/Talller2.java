@@ -27,41 +27,34 @@ public class Talller2 {
             distanciaMinima=100.0;
         }
 
-
-
+        /*
         System.out.println("PERSONAS CON ESTACIONESSSSSSSS");
         for (Persona Persona:
                 listaPersonas) {
             System.out.println(Persona);
         }
-
-
+        */
         tiempoDeEjecucion=contadorAccesos;
-
     }
 
 
 
     public static void medirTiempo(int numeroEstaciones, int numeroPersonas, int k){
+
+        long inicio = System.currentTimeMillis();
         double promedioTiempo, mediciones=0;
-        for (int i=0; i<=k; i++){
-            System.out.println("TIEMPO DE EJECUCION  "+tiempoDeEjecucion );
+        for (int i=0; i<k; i++){
+
+            //System.out.println("TIEMPO DE EJECUCION  "+tiempoDeEjecucion );
             asignarEstaciones(numeroEstaciones, numeroPersonas);
             mediciones+=tiempoDeEjecucion;
         }
-        System.out.println("MEDICIONES   "+mediciones);
-        promedioTiempo=(mediciones/k);
-        System.out.println("Con "+numeroEstaciones+" Estaciones y "+numeroPersonas+" El promedio de tiempo fue: "+promedioTiempo  );
+        long fin = System.currentTimeMillis();
+
+        promedioTiempo=fin - inicio;
+        System.out.println("Con "+numeroEstaciones+" Estaciones y "+numeroPersonas+" El promedio de tiempo fue: "+promedioTiempo/1000);//para que sea en segundos
 
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -85,9 +78,21 @@ public class Talller2 {
 
         asignarEstaciones(numeroEstaciones,numeropersonas);*/
 
+/*
+        medirTiempo(10,1000,10);
+        medirTiempo(10,5000,10);
+        medirTiempo(10,20000,10);
+        medirTiempo(10,50000,10);
+        medirTiempo(10,75000,10);
+        medirTiempo(10,100000,10);*/
 
-        medirTiempo(5,20,3);
 
+        medirTiempo(50,1000,10);
+        medirTiempo(50,5000,10);
+        medirTiempo(50,20000,10);
+        medirTiempo(50,50000,10);
+        medirTiempo(50,75000,10);
+        medirTiempo(50,100000,10);
 
 
     }

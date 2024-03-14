@@ -45,10 +45,13 @@ public class Persona implements Punto2D {
             Personas.add(new Persona(i,coordenadaX,coordenadaY));
         }
 
+        /*
         for (Persona Persona:
                 Personas) {
             System.out.println(Persona);
         }
+        */
+
 
 
 
