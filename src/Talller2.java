@@ -35,22 +35,23 @@ public class Talller2 {
             System.out.println(Persona);
         }
 
+
         tiempoDeEjecucion=contadorAccesos;
 
     }
 
 
 
-    public void medirTiempo(int numeroEstaciones, int numeroPersonas, int k){
-        int promedioTiempo, mediciones=0;
+    public static void medirTiempo(int numeroEstaciones, int numeroPersonas, int k){
+        double promedioTiempo, mediciones=0;
         for (int i=0; i<=k; i++){
+            System.out.println("TIEMPO DE EJECUCION  "+tiempoDeEjecucion );
             asignarEstaciones(numeroEstaciones, numeroPersonas);
             mediciones+=tiempoDeEjecucion;
         }
+        System.out.println("MEDICIONES   "+mediciones);
         promedioTiempo=(mediciones/k);
         System.out.println("Con "+numeroEstaciones+" Estaciones y "+numeroPersonas+" El promedio de tiempo fue: "+promedioTiempo  );
-
-
 
     }
 
@@ -70,7 +71,7 @@ public class Talller2 {
     public static void main(String[] args) {
 
 
-        System.out.println("Ingrese El numero de Estaciones: ");
+        /*System.out.println("Ingrese El numero de Estaciones: ");
         Scanner cantidadEstacionesBase = new Scanner(System.in);
         String input = cantidadEstacionesBase.nextLine();
 
@@ -82,10 +83,11 @@ public class Talller2 {
         int numeropersonas= Integer.parseInt(input2);
 
 
-        //Estacion.crearEstaciones(Integer.parseInt(input));
-        //Persona.crearPersonas(Integer.parseInt(input2));
+        asignarEstaciones(numeroEstaciones,numeropersonas);*/
 
-        asignarEstaciones(numeroEstaciones,numeropersonas);
+
+        medirTiempo(5,20,3);
+
 
 
     }
