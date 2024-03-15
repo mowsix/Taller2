@@ -30,12 +30,6 @@ public class Estacion implements Punto2D {
         return y;
     }
 
-    @Override
-    public double distancia(Punto2D punto) {
-        return 0;
-    }
-
-
     public static ArrayList<Estacion> crearEstaciones(int CantidadEstaciones){
         ArrayList<Estacion> Estaciones = new ArrayList<>();
 
@@ -47,18 +41,15 @@ public class Estacion implements Punto2D {
         }
 
         /*
+        Para imprimir las estaciones
         for (Estacion Estacion:
              Estaciones) {
             System.out.println(Estacion);
         }
         */
 
-
-
-
         return Estaciones;
     }
-
 
     @Override
     public String toString() {

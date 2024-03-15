@@ -30,11 +30,6 @@ public class Persona implements Punto2D {
         return y;
     }
 
-    @Override
-    public double distancia(Punto2D punto) {
-        return 0;
-    }
-
     public static ArrayList<Persona> crearPersonas(int CantidadPersonas){
         ArrayList<Persona> Personas = new ArrayList<>();
 
@@ -46,6 +41,7 @@ public class Persona implements Punto2D {
         }
 
         /*
+        Para Imprimir las Personas
         for (Persona Persona:
                 Personas) {
             System.out.println(Persona);
